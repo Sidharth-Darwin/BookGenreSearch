@@ -19,14 +19,14 @@ from sentence_transformers import SentenceTransformer
 
 GENRE_FILE = Path(__file__).with_name("genres.json")
 MODEL_NAME = "sentence-transformers/paraphrase-MiniLM-L6-v2"
-TOP_K = 5
+TOP_K = 7
 THRESHOLD = 0.35
 
 # ---------------------------------------------------------------------
 # ⏳ CACHE EMBEDDINGS --------------------------------------------------
 # ---------------------------------------------------------------------
 @st.cache_resource(show_spinner="Loading embeddings …")
-def load_embeddings() -> Tuple[SentenceTransformer, List[str], np.ndarray]:
+def load_embeddings() -> Tuple[SentenceTransformer, List[str], List[str], np.ndarray]:
     """Load model, genres, and pre‑compute normalized embeddings (cached)."""
     model = SentenceTransformer(MODEL_NAME)
 
@@ -35,12 +35,13 @@ def load_embeddings() -> Tuple[SentenceTransformer, List[str], np.ndarray]:
 
     texts = [f"{g['name']}: {g['description']}" for g in genres]
     names = [g["name"] for g in genres]
+    descriptions = [g["description"] for g in genres]
 
     mat = model.encode(texts, convert_to_numpy=True, show_progress_bar=False)
     mat /= np.linalg.norm(mat, axis=1, keepdims=True)
-    return model, names, mat
+    return model, names, descriptions, mat
 
-model, genre_names, genre_mat = load_embeddings()
+model, genre_names, genre_descriptions, genre_mat = load_embeddings()
 
 # ---------------------------------------------------------------------
 # 🔍 Classifier --------------------------------------------------------
@@ -81,4 +82,15 @@ selected = st.multiselect(
     default=[g for g, _ in classify(user_input)] if user_input else None,
 )
 if selected:
+    selected_indices = [genre_names.index(g) for g in selected]
+    genres_and_descriptions = [f"{genre_names[g]}: {genre_descriptions[g]}" for g in selected_indices]
     st.success("Tags saved: " + ", ".join(selected))
+    st.markdown("**Selected genres:**")
+    for gd in genres_and_descriptions:
+        st.write(f"- {gd}")
+else:
+    st.info("No genres selected. Use the search to find and select genres.")
+    st.markdown("**All available genres:**")
+    for g, d in zip(genre_names, genre_descriptions):
+        st.write(f"- {g}: {d}")
+
