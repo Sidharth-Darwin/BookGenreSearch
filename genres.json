@@ -1,0 +1,527 @@
+[
+  {
+    "id": "action_adventure_fiction",
+    "name": "Action / Adventure",
+    "description": "Fast-paced stories involving danger, battles, chases, heroic quests, or survival missions in exciting, high-stakes settings."
+  },
+  {
+    "id": "children_fiction",
+    "name": "Children’s Fiction",
+    "description": "Wholesome, imaginative stories written for kids featuring adventure, friendship, life lessons, and age-appropriate challenges or humor."
+  },
+  {
+    "id": "classic_fiction",
+    "name": "Classic Fiction",
+    "description": "Timeless literary works recognized for cultural or artistic impact, often reflecting historical themes, philosophy, or human nature."
+  },
+  {
+    "id": "contemporary_fiction",
+    "name": "Contemporary Fiction",
+    "description": "Realistic modern-day stories centered around everyday characters, emotions, and social issues relevant to today's world."
+  },
+  {
+    "id": "fantasy",
+    "name": "Fantasy",
+    "description": "Imaginative fiction with magical worlds, mythical creatures, supernatural powers, and epic quests beyond normal reality."
+  },
+  {
+    "id": "dark_fantasy",
+    "name": "Dark Fantasy",
+    "description": "Fantasy blended with horror or grim themes; includes morally gray heroes, violence, and darker magical elements."
+  },
+  {
+    "id": "fairy_tale",
+    "name": "Fairy Tale",
+    "description": "Whimsical stories with magical beings like fairies, witches, or talking animals, often with moral lessons or happy endings."
+  },
+  {
+    "id": "graphic_novel",
+    "name": "Graphic Novel",
+    "description": "Narrative storytelling told visually through comic panels; may cover action, drama, fantasy, or slice-of-life with illustrations."
+  },
+  {
+    "id": "historical_fiction",
+    "name": "Historical Fiction",
+    "description": "Fiction set in a specific historical period, blending factual settings with fictional characters, plots, or events."
+  },
+  {
+    "id": "horror",
+    "name": "Horror",
+    "description": "Fiction that evokes fear, dread, or suspense using monsters, violence, supernatural elements, or psychological terror."
+  },
+  {
+    "id": "body_horror",
+    "name": "Body Horror",
+    "description": "Disturbing horror subgenre focused on physical grotesquery, mutation, infection, or destruction of the human body."
+  },
+  {
+    "id": "comedy_horror",
+    "name": "Comedy Horror",
+    "description": "Blends fear with humor; includes absurd, ironic, or slapstick horror where scares and laughs coexist in dark or ridiculous situations."
+  },
+  {
+    "id": "gothic_horror",
+    "name": "Gothic Horror",
+    "description": "Atmospheric horror often set in decaying mansions or ruins, involving madness, ghosts, isolation, and ancestral secrets."
+  },
+  {
+    "id": "cosmic_horror",
+    "name": "Lovecraftian / Cosmic Horror",
+    "description": "Terror from the unknown, ancient beings, or incomprehensible cosmic forces beyond human control or understanding."
+  },
+  {
+    "id": "paranormal_horror",
+    "name": "Paranormal Horror",
+    "description": "Horror involving ghosts, vampires, hauntings, spirits, exorcisms, or supernatural forces linked to the afterlife or the occult."
+  },
+  {
+    "id": "post_apocalyptic_horror",
+    "name": "Post‑Apocalyptic Horror",
+    "description": "Set in ruined worlds after global disasters, featuring survival, mutation, desperation, and horror born from collapse."
+  },
+  {
+    "id": "psychological_horror",
+    "name": "Psychological Horror",
+    "description": "Focuses on mental deterioration, paranoia, unreliable reality, and internal fears that distort perception and truth."
+  },
+  {
+    "id": "quiet_horror",
+    "name": "Quiet Horror",
+    "description": "Low-key, subtle horror that relies on mood, tension, and emotional unease rather than gore or jump scares."
+  },
+  {
+    "id": "slasher_horror",
+    "name": "Slasher Horror",
+    "description": "Gory, violent horror centered on a killer or monster stalking and brutally murdering victims, often in a predictable pattern."
+  },
+  {
+    "id": "disaster",
+    "name": "Disaster / Survival",
+    "description": "Stories or firsthand accounts of natural or human made catastrophic events like nuclear, avalanches, earthquakes, shipwrecks, wildfires, floods etc. Focuses on human endurance, emergency response, or the forces of nature."
+  },
+  {
+    "id": "mystery_crime",
+    "name": "Mystery / Crime / Detective",
+    "description": "Stories involving solving crimes, uncovering hidden truths, or tracking down criminals through investigation or deduction."
+  },
+  {
+    "id": "thriller_suspense",
+    "name": "Thriller / Suspense",
+    "description": "Tension-filled narratives with danger, secrets, or ticking clocks; characters face deception, high stakes, or imminent threats."
+  },
+  {
+    "id": "paranormal_thriller",
+    "name": "Paranormal Thriller",
+    "description": "Thrillers involving supernatural threats like ghosts, psychic powers, or occult mysteries mixed with suspense and action."
+  },
+  {
+    "id": "romance",
+    "name": "Romance",
+    "description": "Stories centered on emotional relationships, attraction, and love; often includes personal growth, conflict, and intimacy."
+  },
+  {
+    "id": "historical_romance",
+    "name": "Historical Romance",
+    "description": "Romantic stories set in past eras with period-accurate settings, customs, and challenges that shape the love story."
+  },
+  {
+    "id": "romantic_suspense",
+    "name": "Romantic Suspense",
+    "description": "Blends romance with elements of mystery or danger—often involving crime, betrayal, or life-threatening situations."
+  },
+  {
+    "id": "science_fiction",
+    "name": "Science Fiction",
+    "description": "Speculative stories built around futuristic technology, space travel, AI, aliens, scientific discovery, or alternate realities."
+  },
+  {
+    "id": "dystopian",
+    "name": "Dystopian",
+    "description": "Bleak, oppressive worlds shaped by totalitarian rule, censorship, surveillance, or environmental collapse; often involves rebellion or resistance."
+  },
+  {
+    "id": "utopian",
+    "name": "Utopian",
+    "description": "Idealized societies where problems are solved through harmony, technology, or collective values; the opposite of dystopia."
+  },
+  {
+    "id": "space_opera",
+    "name": "Space Opera",
+    "description": "Epic interstellar adventure with grand battles, political intrigue, heroic quests, and high-stakes drama across galaxies."
+  },
+  {
+    "id": "time_travel",
+    "name": "Time Travel",
+    "description": "Fiction involving travel through time, alternate timelines, historical shifts, paradoxes, or temporal loops."
+  },
+  {
+    "id": "steampunk",
+    "name": "Steampunk",
+    "description": "Aesthetic blend of Victorian-era fashion and steam-powered technology; often features airships, inventors, and alternate history."
+  },
+  {
+    "id": "cyberpunk",
+    "name": "Cyberpunk",
+    "description": "Dark sci-fi focused on hackers, AI, body modification, and rebellion in neon-lit, dystopian societies dominated by technology and megacorporations."
+  },
+  {
+    "id": "speculative_fiction",
+    "name": "Speculative Fiction",
+    "description": "Blends elements of science fiction, fantasy, dystopia, or the supernatural to explore alternate realities or 'what if' scenarios."
+  },
+  {
+    "id": "literary_fiction",
+    "name": "Literary Fiction",
+    "description": "Character-driven fiction with rich prose, emotional depth, and themes that explore human nature, identity, and relationships."
+  },
+  {
+    "id": "coming_of_age",
+    "name": "Coming‑of‑Age",
+    "description": "Stories that follow a young protagonist’s growth, self-discovery, and transition into adulthood, often marked by personal challenges."
+  },
+  {
+    "id": "family_saga",
+    "name": "Family Saga",
+    "description": "Multi-generational narratives focusing on the legacy, conflict, and evolution of a family over time, often tied to historical events."
+  },
+  {
+    "id": "urban_fiction",
+    "name": "Urban Fiction",
+    "description": "Raw, gritty storytelling rooted in modern city life, often exploring crime, class struggles, street culture, or inner-city survival."
+  },
+  {
+    "id": "western",
+    "name": "Western",
+    "description": "Stories set in the American frontier featuring outlaws, cowboys, lawmen, revenge, and the harsh wilderness of the Old West."
+  },
+  {
+    "id": "war_fiction",
+    "name": "War",
+    "description": "Fiction centered around soldiers, battles, and the impact of war—highlighting trauma, loyalty, survival, and sacrifice."
+  },
+  {
+    "id": "tragedy",
+    "name": "Tragedy",
+    "description": "Serious narratives focused on downfall, moral failure, or loss—often evoking sympathy, fatalism, and deep emotional reflection."
+  },
+  {
+    "id": "religion_spirituality",
+    "name": "Religion & Spirituality",
+    "description": "Books exploring belief systems, theology, divine experiences, spiritual growth, religious practices, or comparative religion."
+  },
+  {
+    "id": "format_print",
+    "name": "Print (Hardcover / Paperback)",
+    "description": "A physical copy of a book available as hardcover or paperback for traditional reading."
+  },
+  {
+    "id": "format_digital",
+    "name": "Digital (eBook)",
+    "description": "A book published in digital form, readable on devices like e-readers, phones, or tablets."
+  },
+  {
+    "id": "format_audio",
+    "name": "Audio (Audiobook)",
+    "description": "Narrated version of a book designed for listening, typically read by a voice actor or the author."
+  },
+  {
+    "id": "memoir",
+    "name": "Memoir",
+    "description": "First-person narrative of a significant life period or emotional journey. Often explores trauma, survival, healing, or personal transformation."
+  },
+  {
+    "id": "nonfic_autobiography",
+    "name": "Autobiography",
+    "description": "A complete life story written by the subject themselves, often covering personal milestones, reflections, and historical context."
+  },
+  {
+    "id": "nonfic_self_help",
+    "name": "Self‑Help / Inspirational",
+    "description": "Advice and strategies for self-improvement, confidence, productivity, mindset, and overcoming personal obstacles."
+  },
+  {
+    "id": "nonfic_business",
+    "name": "Business / Economics",
+    "description": "Covers entrepreneurship, markets, investing, corporate strategy, economics, and financial literacy."
+  },
+  {
+    "id": "nonfic_health_wellness",
+    "name": "Health / Wellness",
+    "description": "Books on physical and mental wellbeing, fitness, nutrition, mindfulness, and healthy living practices."
+  },
+  {
+    "id": "nonfic_politics",
+    "name": "Politics / Civics / Government",
+    "description": "Explores political theory, public policy, governance systems, elections, and contemporary civic debates."
+  },
+  {
+    "id": "nonfic_philosophy",
+    "name": "Philosophy / Ethics / Spirituality",
+    "description": "Explores ideas about existence, morality, belief systems, consciousness, purpose, and human thought."
+  },
+  {
+    "id": "science_nature",
+    "name": "Science & Nature",
+    "description": "Nonfiction books that explain real scientific ideas like quantum physics, space, evolution, and time. Written in an accessible, often math-free style for curious readers or beginners."
+  },
+  {
+    "id": "poetry",
+    "name": "Poetry",
+    "description": "Emotional writing in verse, haiku or free-form stanzas, using metaphor, rhythm, and imagery to express themes like identity, love, grief, or longing."
+  },
+  {
+    "id": "nonfic_education",
+    "name": "Education / Textbook / Guide",
+    "description": "Books that teach academic subjects like science, history, or math. Includes school textbooks, study guides, and educational overviews written for clarity and structured learning."
+  },
+  {
+    "id": "nonfic_journalism",
+    "name": "Journalism / Essays",
+    "description": "Investigative reporting, opinion essays, and nonfiction prose on culture, events, or social commentary."
+  },
+  {
+    "id": "nonfic_travel",
+    "name": "Travel",
+    "description": "Personal narratives or guides from exploring new places, cultures, and destinations around the world."
+  },
+  {
+    "id": "nonfic_cooking",
+    "name": "Cooking / Food",
+    "description": "Cookbooks, culinary essays, food culture, kitchen techniques, recipes, and ingredient-based storytelling."
+  },
+  {
+    "id": "nonfic_hobbies",
+    "name": "Gardening / Crafts / DIY",
+    "description": "Hands-on guides for gardening, home crafts, repairs, and creative hobbies like knitting or woodworking."
+  },
+  {
+    "id": "nonfic_art",
+    "name": "Art / Photography / Design",
+    "description": "Visual nonfiction exploring photography, illustration, or visual art as expression or documentary."
+  },
+  {
+    "id": "nonfic_tech",
+    "name": "Computing / Engineering / Technology",
+    "description": "Nonfiction on computers, engineering, AI, programming, systems, and innovation in science and tech."
+  },
+  {
+    "id": "nonfic_sports",
+    "name": "Sports / Fitness",
+    "description": "Books on athletic performance, training, sports psychology, biographies of athletes, and fitness methods."
+  },
+  {
+    "id": "nonfic_transport",
+    "name": "Transportation / Aviation",
+    "description": "Nonfiction focused on cars, airplanes, trains, maritime travel, and the history or science of transport."
+  },
+  {
+    "id": "nonfic_architecture",
+    "name": "Architecture",
+    "description": "The study of building design, city planning, structural styles, and architectural history or theory."
+  },
+  {
+    "id": "nonfic_language",
+    "name": "Language & Communication",
+    "description": "Covers linguistics, writing skills, public speaking, language learning, and verbal or nonverbal communication."
+  },
+  {
+    "id": "nonfic_reference",
+    "name": "Reference / Encyclopedia / Trivia",
+    "description": "Factbooks, data collections, dictionaries, encyclopedias, timelines, trivia, and quick-look knowledge sources."
+  },
+  {
+    "id": "fiction_chick_lit",
+    "name": "Chick Lit",
+    "description": "Lighthearted fiction often centered around women navigating love, friendship, career, and personal growth with humor and charm."
+  },
+  {
+    "id": "fiction_noir",
+    "name": "Noir",
+    "description": "Dark, gritty crime fiction with cynical characters, moral ambiguity, and bleak urban settings. Nightlife, jazz, hard-boiled, etc"
+  },
+  {
+    "id": "fiction_legal_thriller",
+    "name": "Legal Thriller",
+    "description": "Suspenseful fiction focused on lawyers, courtroom battles, legal investigations, and the pursuit of justice."
+  },
+  {
+    "id": "fiction_political_thriller",
+    "name": "Political Thriller",
+    "description": "Thrillers centered on espionage, government conspiracies, assassinations, and global political conflict."
+  },
+  {
+    "id": "fiction_superhero",
+    "name": "Superhero Fiction",
+    "description": "Stories with heroes or antiheroes who possess superhuman abilities and battle villains or threats to society."
+  },
+  {
+    "id": "fiction_sword_and_sorcery",
+    "name": "Sword & Sorcery",
+    "description": "Action-driven fantasy with warriors, magic, quests, and personal combat set in a mystical or ancient world."
+  },
+  {
+    "id": "fiction_portal_fantasy",
+    "name": "Portal Fantasy / Isekai",
+    "description": "Fiction where characters are transported from the real world into a magical or alternate universe, often via a portal."
+  },
+  {
+    "id": "nonfic_biography",
+    "name": "Biography",
+    "description": "Detailed account of another person's life, told factually with emphasis on accomplishments, struggles, and influence."
+  },
+  {
+    "id": "nonfic_history",
+    "name": "History",
+    "description": "Analyses and narratives of past events, civilizations, wars, revolutions, and historical figures that shaped society."
+  },
+  {
+    "id": "true_crime",
+    "name": "True Crime",
+    "description": "Nonfiction accounts of real criminal cases, FBI investigations, fraud, serial killers, and the justice system’s efforts to catch them."
+  },
+  {
+    "id": "fiction_mythic_fantasy",
+    "name": "Mythic Fantasy",
+    "description": "Fantasy inspired by ancient myths, legends, folklore, and epic gods, often with heroic quests."
+  },
+  {
+    "id": "fiction_middle_grade",
+    "name": "Middle Grade",
+    "description": "Adventure and coming‑of‑age stories for pre‑teens, featuring age‑appropriate themes and humor."
+  },
+  {
+    "id": "nonfic_parenting",
+    "name": "Parenting",
+    "description": "Advice, research, and personal stories on raising children, family dynamics, and child development."
+  },
+  {
+    "id": "nonfic_foreign_languages",
+    "name": "Foreign Language Learning",
+    "description": "Textbooks and guides for studying new languages, grammar, vocabulary, and conversation practice."
+  },
+  {
+    "id": "nonfic_anthropology",
+    "name": "Anthropology / Sociology",
+    "description": "Explores social systems, human evolution, cultural rituals, and behavioral studies of groups and societies."
+  },
+  {
+    "id": "fiction_grimdark",
+    "name": "Grimdark",
+    "description": "Gritty, bleak fantasy worlds filled with moral ambiguity, violence, political corruption, and dark realism."
+  },
+  {
+    "id": "fiction_young_adult",
+    "name": "Young Adult (YA)",
+    "description": "Teen-centered fiction exploring identity, first love, coming-of-age themes, school life, friends, rivals, relationships, and emotional growth."
+  },
+  {
+    "id": "picture_book",
+    "name": "Picture Book",
+    "description": "Fully illustrated stories for young children, often using watercolor or soft visuals and simple text to convey heartwarming messages or gentle adventures."
+  },
+  {
+    "id": "fiction_juvenile",
+    "name": "Juvenile Fiction",
+    "description": "Stories for early readers featuring straightforward plots, simple vocabulary, and foundational life lessons."
+  },
+  {
+    "id": "nonfic_food_drink",
+    "name": "Food & Drink",
+    "description": "Narrative and instructional nonfiction focused on cooking, ingredients, beverages, and culinary heritage."
+  },
+  {
+    "id": "nonfic_humor",
+    "name": "Humor",
+    "description": "Witty essays, comedic stories, satire, and entertaining books designed to provoke laughter or amusement."
+  },
+  {
+    "id": "nonfic_humanities_social_science",
+    "name": "Humanities & Social Sciences",
+    "description": "Books exploring human culture, political thought, social systems, anthropology, ethics, and civilization studies."
+  },
+  {
+    "id": "nonfic_activity_game_books",
+    "name": "Activity & Game Books",
+    "description": "Interactive books filled with puzzles, logic games, coloring, mazes, or activities for entertainment and learning."
+  },
+  {
+    "id": "nonfic_celebrity_nonfiction",
+    "name": "Celebrity Nonfiction",
+    "description": "Memoirs, lifestyle guides, and personal stories written by or about public figures, actors, musicians, and influencers."
+  },
+  {
+    "id": "nonfic_study_aids",
+    "name": "Study Aids & Test Prep",
+    "description": "Educational tools, guides and practice materials designed to help with academic exams, standardized tests, and certifications."
+  },
+  {
+    "id": "nonfic_productivity",
+    "name": "Productivity / Personal Development",
+    "description": "Books focused on focus, habit building, time management, goal-setting, routines, and efficiency."
+  },
+  {
+    "id": "nonfic_motivational",
+    "name": "Motivational / Success",
+    "description": "Inspiring stories and mindset coaching to help readers achieve personal and professional goals with determination and vision."
+  },
+  {
+    "id": "nonfic_mindfulness",
+    "name": "Mindfulness / Meditation",
+    "description": "Guides on practicing presence, reducing stress, meditation techniques, and cultivating inner awareness."
+  },
+  {
+    "id": "nonfic_mental_health",
+    "name": "Mental Health",
+    "description": "Supportive works addressing anxiety, trauma, depression, healing, emotional regulation, and therapy practices."
+  },
+  {
+    "id": "nonfic_behavioral_science",
+    "name": "Behavioral Science",
+    "description": "Books exploring how people think and act, including decision-making, biases, habits, and behavioral economics."
+  },
+  {
+    "id": "nonfic_psychology_popular",
+    "name": "Popular Psychology",
+    "description": "Accessible explanations of psychology topics such as personality, motivation, emotions, and relationships."
+  },
+  {
+    "id": "nonfic_communication",
+    "name": "Communication / Public Speaking",
+    "description": "Improving conversations, persuasion, and presentation skills. Techniques for public speaking, speech writing, and confidence building."
+  },
+  {
+    "id": "nonfic_relationships",
+    "name": "Relationships / Dating",
+    "description": "Guides on emotional intimacy, healthy communication, attachment theory, dating, and romantic connection."
+  },
+  {
+    "id": "nonfic_creativity",
+    "name": "Creativity / Writing Life",
+    "description": "Books for artists and writers focused on creative flow, overcoming blocks, building routines, and artistic exploration."
+  },
+  {
+    "id": "nonfic_work_leadership",
+    "name": "Work / Career / Leadership",
+    "description": "Professional growth, workplace strategy, career planning, team building, and leadership development."
+  },
+  {
+    "id": "nonfic_startup",
+    "name": "Startup / Entrepreneurship",
+    "description": "Tactical and motivational books on launching startups, building products, funding ventures, and innovation culture."
+  },
+  {
+    "id": "nonfic_finance",
+    "name": "Finance / Investing / Wealth",
+    "description": "Guides on budgeting, wealth creation, personal finance, investing strategies, and financial independence."
+  },
+  {
+    "id": "nonfic_philanthropy",
+    "name": "Philanthropy / Volunteering",
+    "description": "Books on charity, social impact, nonprofit work, volunteering, and creating positive change in communities."
+  },
+  {
+    "id": "nonfic_strategy",
+    "name": "Strategy / Systems / Decision Making",
+    "description": "Frameworks, mental models, and decision-making tools for solving problems, analyzing systems, and planning ahead."
+  }
+]
