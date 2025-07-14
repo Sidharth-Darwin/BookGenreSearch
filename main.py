@@ -1,96 +1,84 @@
 """
-Streamlit Genre Classifier App
-----------------------------------
-
-•  Load `genres.json` (must be present in the same folder).
-•  Embed each genre (name + description) once at start‑up
-•  Allow the user to enter a synopsis / blurb.
-•  Return the top‑k matching genres (cosine similarity).
-•  Provide a multiselect so users can manually tag items.
+Streamlit Genre Classifier App with Cached Embeddings
+-----------------------------------------------------
+• Loads `genres.json` (same folder).
+• Embeds each genre once and caches the matrix with `st.cache_resource` → nearly instant hot‑reload.
+• MiniLM (paraphrase‑MiniLM‑L6‑v2) for CPU‑friendly inference.
+• User enters a blurb ➜ shows top‑k genres.
+• Multiselect to add/remove tags with live search.
 """
 
+from __future__ import annotations
 import json
 from pathlib import Path
 from typing import List, Tuple
 import numpy as np
 import streamlit as st
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer
 
-# -----------------------------------------------------------------------------
-# 1 / Load genres --------------------------------------------------------------
-# -----------------------------------------------------------------------------
 GENRE_FILE = Path(__file__).with_name("genres.json")
-if not GENRE_FILE.exists():
-    st.error("genres.json not found – place it in the same directory as app.py")
-    st.stop()
+MODEL_NAME = "sentence-transformers/paraphrase-MiniLM-L6-v2"
+TOP_K = 5
+THRESHOLD = 0.35
 
-with GENRE_FILE.open("r", encoding="utf-8") as f:
-    genres = json.load(f)
+# ---------------------------------------------------------------------
+# ⏳ CACHE EMBEDDINGS --------------------------------------------------
+# ---------------------------------------------------------------------
+@st.cache_resource(show_spinner="Loading embeddings …")
+def load_embeddings() -> Tuple[SentenceTransformer, List[str], np.ndarray]:
+    """Load model, genres, and pre‑compute normalized embeddings (cached)."""
+    model = SentenceTransformer(MODEL_NAME)
 
-# Build text used for embedding (name + description)
-genre_texts = [f"{g['name']}: {g['description']}" for g in genres]
-genre_names = [g["name"] for g in genres]
+    with GENRE_FILE.open("r", encoding="utf-8") as f:
+        genres = json.load(f)
 
-# -----------------------------------------------------------------------------
-# 2 / Sentence‑BERT model ------------------------------------------------------
-# -----------------------------------------------------------------------------
-@st.cache_resource(show_spinner=True)
-def load_model_and_embeddings():
-    model = SentenceTransformer("paraphrase-MiniLM-L6-v2")  # ~80 MB, CPU‑friendly
-    embs = model.encode(genre_texts, normalize_embeddings=True)
-    return model, embs
+    texts = [f"{g['name']}: {g['description']}" for g in genres]
+    names = [g["name"] for g in genres]
 
-model, genre_embs = load_model_and_embeddings()
+    mat = model.encode(texts, convert_to_numpy=True, show_progress_bar=False)
+    mat /= np.linalg.norm(mat, axis=1, keepdims=True)
+    return model, names, mat
 
-# -----------------------------------------------------------------------------
-# 3 / Helper – classify --------------------------------------------------------
-# -----------------------------------------------------------------------------
+model, genre_names, genre_mat = load_embeddings()
 
-def classify(text: str, top_k: int = 5, threshold: float = 0.35) -> List[Tuple[str, float]]:
-    if not text.strip():
-        return []
-    query_emb = model.encode([text], normalize_embeddings=True)
-    sims = np.dot(genre_embs, query_emb.T).flatten()
-    # keep those above threshold; otherwise top‑k anyway
-    idx = np.where(sims >= threshold)[0]
-    if len(idx) == 0:
-        idx = sims.argsort()[-top_k:][::-1]
+# ---------------------------------------------------------------------
+# 🔍 Classifier --------------------------------------------------------
+# ---------------------------------------------------------------------
+@st.cache_resource(show_spinner=False)
+def classify(text: str, k: int = TOP_K) -> List[Tuple[str, float]]:
+    q = model.encode([text], convert_to_numpy=True)[0]
+    q /= np.linalg.norm(q)
+    sims = genre_mat @ q
+    idx = sims.argsort()[-k:][::-1]
+    return [(genre_names[i], float(sims[i])) for i in idx if sims[i] >= THRESHOLD]
+
+# ---------------------------------------------------------------------
+# 🖼️ Streamlit UI ------------------------------------------------------
+# ---------------------------------------------------------------------
+st.set_page_config(page_title="Genre Classifier", page_icon="📚", layout="centered")
+st.title("📚 Zero‑Shot Genre Classifier")
+
+user_input = st.text_area("Enter a book/show summary, review, or subject list:", height=170)
+if st.button("Classify", type="primary") and user_input.strip():
+    top_genres = classify(user_input.strip())
+    if top_genres:
+        st.subheader("Top matches:")
+        for g, sc in top_genres:
+            st.write(f"**{g}** – score `{sc:.3f}`")
     else:
-        idx = idx[np.argsort(sims[idx])[::-1]]
-    return [(genre_names[i], float(sims[i])) for i in idx[:top_k]]
+        st.info("No genre scored above the threshold; showing closest anyway.")
+        alt = classify(user_input.strip(), k=TOP_K)
+        for g, sc in alt:
+            st.write(f"**{g}** – score `{sc:.3f}`")
 
-# -----------------------------------------------------------------------------
-# 4 / Streamlit UI -------------------------------------------------------------
-# -----------------------------------------------------------------------------
-st.set_page_config(page_title="Genre Classifier", page_icon="📚", layout="centered")
-
-st.title("📚 Genre Classifier (Sentence‑BERT + Cosine Similarity)")
-
-with st.sidebar:
-    st.header("Settings")
-    k = st.slider("Top‑k genres", 1, 10, 5)
-    thresh = st.slider("Similarity threshold", 0.0, 1.0, 0.35, 0.01)
-    st.markdown("---")
-    st.write("**Manual Tagging** – choose any genres to attach manually:")
-    manual_tags = st.multiselect("Select genres", genre_names)
-
-# Main input
-user_text = st.text_area("Enter a synopsis / blurb / summary", height=150, placeholder="Paste or type text here…")
-
-if st.button("Classify"):
-    if not user_text.strip():
-        st.warning("Please enter some text to classify.")
-    else:
-        with st.spinner("Embedding & matching…"):
-            results = classify(user_text, top_k=k, threshold=thresh)
-        st.subheader("🔎 Suggested Genres")
-        if results:
-            for name, score in results:
-                st.write(f"**{name}** — {score:.3f}")
-        else:
-            st.info("No genres passed the similarity threshold. Try lowering the threshold or adding keywords.")
-
-if manual_tags:
-    st.subheader("🖊️  Manual Tags Added")
-    st.write(", ".join(manual_tags))
+# Manual tag editor ---------------------------------------------------
+st.divider()
+st.markdown("### 🏷️ Add / remove genres manually")
+selected = st.multiselect(
+    "Search and select genres:",
+    options=genre_names,
+    default=[g for g, _ in classify(user_input)] if user_input else None,
+)
+if selected:
+    st.success("Tags saved: " + ", ".join(selected))
