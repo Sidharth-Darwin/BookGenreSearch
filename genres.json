@@ -120,6 +120,18 @@
     "description": "Stories centered on emotional relationships, attraction, and love; often includes personal growth, conflict, and intimacy."
   },
   {
+    "id": "heist",
+    "name": "Heist",
+    "description": "Stories that center around the planning, execution, and aftermath of a theft or robbery, typically involving a skilled crew, a high-stakes target, and intricate schemes.",
+    "keywords": ["heist", "vault", "getaway driver", "blueprints", "crew leader", "inside job", "alarm system", "score", "safecracker", "double cross", "drill team", "casino vault"]
+  },
+  {
+    "id": "literary_criticism",
+    "name": "Literary Criticism",
+    "description": "Analytical or evaluative writing that interprets, critiques, or theorizes about literature, its structure, context, or meaning.",
+    "keywords": ["close reading", "narrative structure", "postcolonial lens", "deconstruction", "literary theory", "symbolism analysis", "textual analysis", "intertextuality", "authorial intent", "critical perspective", "metafictional commentary"]
+  },
+  {
     "id": "historical_romance",
     "name": "Historical Romance",
     "description": "Romantic stories set in past eras with period-accurate settings, customs, and challenges that shape the love story."
